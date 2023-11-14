@@ -12,51 +12,51 @@ class ExploreWine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: PreferredSize(
-        //   preferredSize: Size.fromHeight(220),
-        //   child: Container(
-        //     decoration: BoxDecoration(
-        //       image: DecorationImage(
-        //           opacity: 0.7,
-        //           image: AssetImage("assets/images/img_11.png"),
-        //           fit: BoxFit.cover),
-        //       borderRadius: BorderRadius.zero,
-        //     ),
-        //     child: const Column(
-        //       mainAxisAlignment: MainAxisAlignment.center,
-        //       children: [
-        //         Text(
-        //           "WINE",
-        //           style: TextStyle(
-        //               color: Colors.black,
-        //               fontWeight: FontWeight.bold,
-        //               fontSize: 50),
-        //         ),
-        //         Text(
-        //           "What does the grape say",
-        //           style: TextStyle(
-        //               color: Colors.black,
-        //               fontSize: 25,
-        //               fontWeight: FontWeight.bold),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-        // body: Column(
-        //   children: [
-        //     List_Items(
-        //       img: "assets/images/img_18.png",
-        //       tittle: 'Spritz Veneziano',
-        //       text1: 'WINE',
-        //       text2: "Classic",
-        //       text3: "Light",
-        //       item1: "3 parts\nPROSECCO",
-        //       item2: "2 parts\nAPEROL",
-        //       item3: "1 Splash\nClub soda\n ice",
-        //     ),
-        //   ],
-        // ),
-        );
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(220),
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                opacity: 0.7,
+                image: AssetImage("assets/images/img_11.png"),
+                fit: BoxFit.cover),
+            borderRadius: BorderRadius.zero,
+          ),
+          child: const Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "WINE",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 50),
+              ),
+              Text(
+                "What does the grape say",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+      ),
+      body: Column(
+        children: [
+          List_Items(
+            img: "assets/images/img_18.png",
+            tittle: 'Spritz Veneziano',
+            text1: 'WINE',
+            text2: "Classic",
+            text3: "Light",
+            item1: "3 parts\nPROSECCO",
+            item2: "2 parts\nAPEROL",
+            item3: "1 Splash\nClub soda\n ice",
+          ),
+        ],
+      ),
+    );
   }
 }

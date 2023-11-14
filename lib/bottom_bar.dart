@@ -109,7 +109,7 @@ class _Bottom_BarState extends State<Bottom_Bar> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60),
+            padding: const EdgeInsets.symmetric(horizontal: 58),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -124,7 +124,7 @@ class _Bottom_BarState extends State<Bottom_Bar> {
                       color: pageIndex == 1 ? Colors.white : Colors.grey),
                 ),
                 Text(
-                  "hii",
+                  "Like",
                   style: TextStyle(
                       color: pageIndex == 2 ? Colors.white : Colors.grey),
                 ),
