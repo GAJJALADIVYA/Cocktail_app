@@ -38,19 +38,32 @@ class Explore_wsiskey extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          List_Items(
-            img: "assets/images/img_24.png",
-            tittle: 'Irish Shillelagh',
-            text1: 'Whiskey',
-            text2: "Short",
-            text3: "Strong",
-            item1: "1/2 parts\nirish Whiskey",
-            item2: "1/2 parts\nSloe gin",
-            item3: "1 tsp\ndark rum ice",
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            List_Items(
+              img: "assets/images/img_24.png",
+              tittle: 'Irish Shillelagh',
+              text1: 'Whiskey',
+              text2: "Short",
+              text3: "Strong",
+              item1: "1/2 parts\nirish Whiskey",
+              item2: "1/2 parts\nSloe gin",
+              item3: "1 tsp\ndark rum ice",
+            ),
+            List_Items(
+              img: "assets/images/img_30.png",
+              tittle: 'Mint Julep',
+              text1: 'Whiskey',
+              text2: "Classic",
+              text3: "Strong",
+              item1: "3 parts\nBourbon",
+              item2: "1 tsp\nSugar water",
+              item3: "4\nMint leaves\n ice ",
+            ),
+          ],
+        ),
       ),
     );
   }

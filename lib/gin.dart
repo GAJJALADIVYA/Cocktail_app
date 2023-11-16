@@ -39,19 +39,32 @@ class Explore_Gin extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          List_Items(
-            img: "assets/images/img_20.png",
-            tittle: "Negroni",
-            text1: 'GIN',
-            text2: "Classic",
-            text3: "Short",
-            item1: "1.5 parts\ngin",
-            item2: "1/5 parts\nSweet vermouth",
-            item3: "1/5 part\n campari",
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            List_Items(
+              img: "assets/images/img_20.png",
+              tittle: "Negroni",
+              text1: 'GIN',
+              text2: "Classic",
+              text3: "Short",
+              item1: "1.5 parts\ngin",
+              item2: "1/5 parts\nSweet vermouth",
+              item3: "1/5 part\n campari",
+            ),
+            List_Items(
+              img: "assets/images/img_27.png",
+              tittle: "Gin Tonic",
+              text1: 'GIN',
+              text2: "Longdrink",
+              text3: "Light",
+              item1: "2 parts\nGin",
+              item2: "4 parts\nTonic",
+              item3: "1 part\n Ice cubes",
+            ),
+          ],
+        ),
       ),
     );
   }

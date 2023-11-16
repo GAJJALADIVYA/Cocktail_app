@@ -38,19 +38,32 @@ class ExploreVodka extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          List_Items(
-            img: "assets/images/img_21.png",
-            tittle: 'AMF',
-            text1: 'VODKA',
-            text2: "Classic",
-            text3: "Light",
-            item1: "1/2 parts\nvodka",
-            item2: "1/2 parts\nWhite rum",
-            item3: "1/2 parts\ntequila\n ice",
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            List_Items(
+              img: "assets/images/img_21.png",
+              tittle: 'AMF',
+              text1: 'VODKA',
+              text2: "Classic",
+              text3: "Light",
+              item1: "1/2 parts\nvodka",
+              item2: "1/2 parts\nWhite rum",
+              item3: "1/2 parts\ntequila\n ice",
+            ),
+            List_Items(
+              img: "assets/images/img_29.png",
+              tittle: 'Bloody\nScrewdriver',
+              text1: 'VODKA',
+              text2: "Longdrink",
+              text3: "Strong",
+              item1: "2 parts\nVodka",
+              item2: "1 parts\nOrange Juice",
+              item3: "1 dash\nGrenadine\n ice",
+            ),
+          ],
+        ),
       ),
     );
   }

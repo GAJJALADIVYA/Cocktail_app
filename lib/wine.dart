@@ -43,19 +43,32 @@ class ExploreWine extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          List_Items(
-            img: "assets/images/img_18.png",
-            tittle: 'Spritz Veneziano',
-            text1: 'WINE',
-            text2: "Classic",
-            text3: "Light",
-            item1: "3 parts\nPROSECCO",
-            item2: "2 parts\nAPEROL",
-            item3: "1 Splash\nClub soda\n ice",
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            List_Items(
+              img: "assets/images/img_18.png",
+              tittle: 'Spritz Veneziano',
+              text1: 'WINE',
+              text2: "Classic",
+              text3: "Light",
+              item1: "3 parts\nPROSECCO",
+              item2: "2 parts\nAPEROL",
+              item3: "1 Splash\nClub soda\n ice",
+            ),
+            List_Items(
+              img: "assets/images/img_25.png",
+              tittle: 'Bellini',
+              text1: 'WINE',
+              text2: "Classic",
+              text3: "Light",
+              item1: "5 parts\nPROSECCO",
+              item2: "2.5 parts\nPeach Juice",
+              item3: "1 Splash\n ice",
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -39,19 +39,32 @@ class Explore_Beer extends StatelessWidget {
           ),
         ),
       ),
-      body: Column(
-        children: [
-          List_Items(
-            img: "assets/images/img_22.png",
-            tittle: 'Steamroller',
-            text1: 'BEER',
-            text2: "LongDrink",
-            text3: "Light",
-            item1: "1/2 parts\nElderflower",
-            item2: "1/2 parts\nWhiskey",
-            item3: "10 parts\nBeer ice",
-          ),
-        ],
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            List_Items(
+              img: "assets/images/img_22.png",
+              tittle: 'Steamroller',
+              text1: 'BEER',
+              text2: "LongDrink",
+              text3: "Light",
+              item1: "1/2 parts\nElderflower",
+              item2: "1/2 parts\nWhiskey",
+              item3: "10 parts\nBeer ice",
+            ),
+            List_Items(
+              img: "assets/images/img_28.png",
+              tittle: 'Harvey\nWeissbanger',
+              text1: 'BEER',
+              text2: "LongDrink",
+              text3: "Light",
+              item1: "1/2 parts\nGalliano",
+              item2: "1/2 parts\nOrange juice",
+              item3: "9 parts\nWhite beer\n ice cubes",
+            ),
+          ],
+        ),
       ),
     );
   }
