@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'list_items.dart';
 import 'explore.dart';
@@ -18,7 +19,7 @@ class Explore_Gin extends StatelessWidget {
                 fit: BoxFit.cover),
             borderRadius: BorderRadius.zero,
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -28,12 +29,21 @@ class Explore_Gin extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 50),
               ),
-              Text(
-                "A refreshing bever age for warm days.",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+              AnimatedTextKit(
+                animatedTexts: [
+                  FadeAnimatedText("A refreshing bever age for warm days.",
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+                ],
+                totalRepeatCount: 4,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                onTap: () {
+                  print("Tap Event");
+                },
               ),
             ],
           ),

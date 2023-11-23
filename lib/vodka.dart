@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/list_items.dart';
 
@@ -17,7 +18,7 @@ class ExploreVodka extends StatelessWidget {
                 fit: BoxFit.cover),
             borderRadius: BorderRadius.zero,
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -27,12 +28,22 @@ class ExploreVodka extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 50),
               ),
-              Text(
-                "This spirit looks good in any glass,\nin anylighting and at any time of\nthe day.",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                ),
+              AnimatedTextKit(
+                animatedTexts: [
+                  FadeAnimatedText(
+                      "This spirit looks good in any glass,\nin anylighting and at any time of\nthe day.",
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold)),
+                ],
+                totalRepeatCount: 4,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                onTap: () {
+                  print("Tap Event");
+                },
               ),
             ],
           ),

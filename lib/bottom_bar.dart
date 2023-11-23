@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mybar/explore.dart';
 import 'package:mybar/home.dart';
-import 'package:mybar/wish_list.dart';
+import 'package:mybar/whiskey.dart';
 import 'package:mybar/wish_list.dart';
 import 'package:mybar/wine.dart';
-import 'package:mybar/wish_list.dart';
 import 'package:mybar/vodka.dart';
 import 'rum.dart';
 import 'gin.dart';
@@ -24,6 +23,12 @@ class _Bottom_BarState extends State<Bottom_Bar> {
     const MyHomePage(),
     const Explore(),
     const Wish_List(),
+    const ExploreWine(),
+    const Explore_Rum(),
+    const Explore_Gin(),
+    const ExploreVodka(),
+    const Explore_Beer(),
+    const Explore_wsiskey(),
   ];
   @override
   Widget build(BuildContext context) {

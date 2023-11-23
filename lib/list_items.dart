@@ -1,9 +1,12 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'bottom_bar.dart';
 import 'explore.dart';
 import 'wine.dart';
+import 'wish_list.dart';
 
-class List_Items extends StatelessWidget {
+class List_Items extends StatefulWidget {
   final String img;
   final String tittle;
   final String text1;
@@ -12,6 +15,7 @@ class List_Items extends StatelessWidget {
   final String item1;
   final String item2;
   final String item3;
+
   const List_Items({
     super.key,
     required this.img,
@@ -23,6 +27,13 @@ class List_Items extends StatelessWidget {
     required this.item2,
     required this.item3,
   });
+
+  @override
+  State<List_Items> createState() => _List_ItemsState();
+}
+
+class _List_ItemsState extends State<List_Items> {
+  int add = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +56,7 @@ class List_Items extends StatelessWidget {
                       topLeft: Radius.circular(15),
                       bottomLeft: Radius.circular(15),
                     ),
-                    child: Image.asset(img),
+                    child: Image.asset(widget.img),
                   ),
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 8.0),
@@ -53,12 +64,25 @@ class List_Items extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          tittle,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-                          ),
+                        AnimatedTextKit(
+                          animatedTexts: [
+                            FlickerAnimatedText(widget.tittle,
+                                textStyle: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                            FlickerAnimatedText(widget.tittle,
+                                textStyle: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                            FlickerAnimatedText(widget.tittle,
+                                textStyle: TextStyle(
+                                    fontSize: 20, fontWeight: FontWeight.bold)),
+                          ],
+                          isRepeatingAnimation: true,
+                          pause: const Duration(milliseconds: 1000),
+                          displayFullTextOnTap: true,
+                          stopPauseOnTap: true,
+                          onTap: () {
+                            print("Tap Event");
+                          },
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -70,7 +94,7 @@ class List_Items extends StatelessWidget {
                                 color: Colors.black),
                             child: Center(
                               child: Text(
-                                text1,
+                                widget.text1,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20),
                               ),
@@ -87,7 +111,7 @@ class List_Items extends StatelessWidget {
                                 color: Colors.black),
                             child: Center(
                               child: Text(
-                                text2,
+                                widget.text2,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 15),
                               ),
@@ -104,7 +128,7 @@ class List_Items extends StatelessWidget {
                                 color: Colors.black),
                             child: Center(
                               child: Text(
-                                text3,
+                                widget.text3,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 15),
                               ),
@@ -162,7 +186,7 @@ class List_Items extends StatelessWidget {
                               color: Colors.black),
                           child: Center(
                             child: Text(
-                              item1,
+                              widget.item1,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 15),
                             ),
@@ -179,7 +203,7 @@ class List_Items extends StatelessWidget {
                               color: Colors.black),
                           child: Center(
                             child: Text(
-                              item2,
+                              widget.item2,
                               style:
                                   TextStyle(color: Colors.white, fontSize: 15),
                             ),
@@ -194,7 +218,7 @@ class List_Items extends StatelessWidget {
                             color: Colors.black),
                         child: Center(
                           child: Text(
-                            item3,
+                            widget.item3,
                             style: TextStyle(color: Colors.white, fontSize: 15),
                           ),
                         ),
@@ -204,20 +228,46 @@ class List_Items extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 40,
-                width: 70,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.black),
-                child: Center(
-                  child: Text(
-                    "+ADD",
-                    style: TextStyle(color: Colors.white, fontSize: 15),
+            ListTile(
+              title: const Text(
+                "COST",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Text(
+                "150",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+              ),
+              trailing: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        if (add > 0) {
+                          add--;
+                        }
+                      });
+                    },
+                    child: const Icon(Icons.remove_rounded),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "$add",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        add++;
+                      });
+                    },
+                    child: Icon(Icons.add),
+                  ),
+                ],
               ),
             ),
           ],

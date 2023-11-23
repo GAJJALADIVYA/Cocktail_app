@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/home.dart';
 import 'package:mybar/vodka.dart';
@@ -34,12 +35,31 @@ class Home_List extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  ),
+                AnimatedTextKit(
+                  animatedTexts: [
+                    RotateAnimatedText(name,
+                        textStyle: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                    RotateAnimatedText(name,
+                        textStyle: TextStyle(
+                            color: Colors.deepPurple,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                    RotateAnimatedText(name,
+                        textStyle: TextStyle(
+                            color: Colors.blueAccent,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold)),
+                  ],
+                  totalRepeatCount: 4,
+                  pause: const Duration(milliseconds: 1000),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true,
+                  onTap: () {
+                    print("Tap Event");
+                  },
                 ),
                 Text(
                   text,

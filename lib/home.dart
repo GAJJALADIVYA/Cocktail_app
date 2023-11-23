@@ -1,10 +1,17 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/bottom_bar.dart';
 import 'package:mybar/explore.dart';
 import 'package:mybar/home_list.dart';
+import 'package:mybar/long_drink.dart';
+import 'package:mybar/services.dart';
 import 'package:mybar/wish_list.dart';
 import 'package:mybar/home.dart';
 import 'list_items.dart';
+import 'package:mybar/search_model.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
+import 'splashscreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,12 +26,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  SearchModel searchModel = SearchModel();
+  String buttonText = "search";
+  TextEditingController searchController = TextEditingController();
+  @override
   Widget build(BuildContext context) {
-    TextEditingController searchController = TextEditingController();
     return MaterialApp(
       home: Scaffold(
         appBar: PreferredSize(
@@ -37,22 +51,33 @@ class MyHomePage extends StatelessWidget {
                   fit: BoxFit.cover),
               borderRadius: BorderRadius.zero,
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Welcome to Cocktail Flow",
+                  "Welcome to Cockatil Flow",
                   style: TextStyle(
                       color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 35),
-                ),
-                Text(
-                  "The Definitive Cocktail Encyclopaedia.",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20,
+                      fontSize: 35,
                       fontWeight: FontWeight.bold),
+                ),
+                AnimatedTextKit(
+                  animatedTexts: [
+                    RotateAnimatedText(
+                      'The Definitive Cocktail Encyclopaedia.',
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                  totalRepeatCount: 4,
+                  pause: const Duration(milliseconds: 1000),
+                  displayFullTextOnTap: true,
+                  stopPauseOnTap: true,
+                  onTap: () {
+                    print("Tap Event");
+                  },
                 ),
               ],
             ),
@@ -64,39 +89,21 @@ class MyHomePage extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
             child: Column(
               children: [
-                TextField(
+                SearchBar(
                   controller: searchController,
-                  keyboardType: TextInputType.text,
-                  obscureText: false,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.black,
-                    ),
-                    hintText: "Search Here For Your Cocktail",
-                    hintStyle: TextStyle(color: Colors.grey),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: Colors.black,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: Colors.black,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        width: 2,
-                        color: Colors.black,
-                      ),
-                    ),
-                  ),
+                ),
+                MaterialButton(
+                  color: Colors.amberAccent,
+                  onPressed: () async {
+                    print("dkvfjbksdvjb ${searchController.text}");
+                    searchModel = SearchModel();
+                    searchModel = await ApiBaseHelper()
+                        .getSearchResponse(searchController.text);
+                    setState(() {
+                      buttonText = searchModel.drinks![5].strDrink!;
+                    });
+                  },
+                  child: Text(buttonText),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -107,14 +114,24 @@ class MyHomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.only(top: 10),
                     child: Column(
                       children: [
-                        Home_List(
-                            image: "assets/images/img_3.png",
-                            name: "LONGDRINK",
-                            text: "Tall,dark&handsome"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Long_drink(),
+                              ),
+                            );
+                          },
+                          child: Home_List(
+                              image: "assets/images/img_3.png",
+                              name: "Long Drinks",
+                              text: "Tall, dark and handsome."),
+                        ),
                         SizedBox(
                           height: 15,
                         ),

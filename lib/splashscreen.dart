@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'bottom_bar.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -10,10 +11,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool selected = false;
+
   @override
   void initState() {
     // TODO: implement initState
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(Duration(seconds: 10), () {
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => Bottom_Bar()));
     });
@@ -23,54 +26,73 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black87,
-      body: Column(
-        children: [
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/1.jpg"),
-              ),
-            ),
-            height: 500,
-            width: 500,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 250),
-              child: Center(
-                child: Container(
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
+      backgroundColor: Colors.black,
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        color: Colors.black,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Center(
+              child: Container(
+                height: 250,
+                width: 250,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  boxShadow: [
+                    new BoxShadow(
                       color: Colors.white,
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/2.jpg"),
-                          fit: BoxFit.cover)),
-                  height: 150,
-                  width: 150,
+                      blurRadius: 8,
+                      spreadRadius: 4,
+                    ),
+                  ],
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/1.jpg"),
+                      fit: BoxFit.cover),
                 ),
               ),
             ),
-          ),
-          const Padding(
-            padding: const EdgeInsets.only(right: 100),
-            child: Text(
-              "MY",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40),
+            Padding(
+              padding: const EdgeInsets.only(right: 100, top: 50),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  WavyAnimatedText('MY',
+                      textStyle: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold)),
+                ],
+                isRepeatingAnimation: true,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                onTap: () {
+                  print("Tap Event");
+                },
+              ),
             ),
-          ),
-          const Padding(
-            padding: const EdgeInsets.only(left: 100),
-            child: Text(
-              "COCKTAILS",
-              style: TextStyle(
-                  color: Colors.pinkAccent,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40),
+            Padding(
+              padding: const EdgeInsets.only(left: 100),
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  WavyAnimatedText('COCKTAIL',
+                      textStyle: TextStyle(
+                          color: Colors.pinkAccent,
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold)),
+                ],
+                isRepeatingAnimation: true,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                onTap: () {
+                  print("Tap Event");
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

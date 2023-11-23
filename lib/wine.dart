@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/home.dart';
 import 'package:mybar/list_items.dart';
@@ -6,9 +7,15 @@ import 'package:mybar/home_list.dart';
 import 'home.dart';
 import 'explore.dart';
 
-class ExploreWine extends StatelessWidget {
+class ExploreWine extends StatefulWidget {
   const ExploreWine({super.key});
 
+  @override
+  State<ExploreWine> createState() => _ExploreWineState();
+}
+
+class _ExploreWineState extends State<ExploreWine> {
+  int add = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +29,7 @@ class ExploreWine extends StatelessWidget {
                 fit: BoxFit.cover),
             borderRadius: BorderRadius.zero,
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -32,12 +39,21 @@ class ExploreWine extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     fontSize: 50),
               ),
-              Text(
-                "What does the grape say",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold),
+              AnimatedTextKit(
+                animatedTexts: [
+                  FadeAnimatedText("What does the grape say",
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold)),
+                ],
+                totalRepeatCount: 4,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                onTap: () {
+                  print("Tap Event");
+                },
               ),
             ],
           ),

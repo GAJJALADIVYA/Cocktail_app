@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/beer.dart';
 import 'package:mybar/gin.dart';
@@ -23,22 +24,24 @@ class Explore extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.deepPurpleAccent.shade100,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "MY BAR",
-              style: TextStyle(color: Colors.black, fontSize: 25),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(80),
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/img_9.png"),
-                      fit: BoxFit.cover),
-                ),
+            Center(
+              child: AnimatedTextKit(
+                animatedTexts: [
+                  WavyAnimatedText('MY BAR',
+                      textStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500)),
+                ],
+                isRepeatingAnimation: true,
+                pause: const Duration(milliseconds: 1000),
+                displayFullTextOnTap: true,
+                stopPauseOnTap: true,
+                onTap: () {
+                  print("Tap Event");
+                },
               ),
             ),
           ],
@@ -55,7 +58,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ExploreWine(),
+                      builder: (context) => ExploreWine(),
                     ),
                   );
                 },
