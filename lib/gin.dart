@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'list_items.dart';
 import 'explore.dart';
 
-class Explore_Gin extends StatelessWidget {
-  const Explore_Gin({super.key});
+class Gin extends StatelessWidget {
+  const Gin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,6 @@ class Explore_Gin extends StatelessWidget {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ],
           ),
@@ -62,6 +59,7 @@ class Explore_Gin extends StatelessWidget {
               item1: "1.5 parts\ngin",
               item2: "1/5 parts\nSweet vermouth",
               item3: "1/5 part\n campari",
+              name: 'Negroni==>RECIPIES',
             ),
             List_Items(
               img: "assets/images/img_27.png",
@@ -72,6 +70,7 @@ class Explore_Gin extends StatelessWidget {
               item1: "2 parts\nGin",
               item2: "4 parts\nTonic",
               item3: "1 part\n Ice cubes",
+              name: 'Gin Tonic==>RECIPIES',
             ),
           ],
         ),

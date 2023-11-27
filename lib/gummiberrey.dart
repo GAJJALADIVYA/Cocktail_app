@@ -6,8 +6,8 @@ import 'list_items.dart';
 import 'splashscreen.dart';
 import 'home_list_items.dart';
 
-class Long_drink extends StatelessWidget {
-  const Long_drink({super.key});
+class Gummiberrey extends StatelessWidget {
+  const Gummiberrey({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Long_drink extends StatelessWidget {
         backgroundColor: Colors.teal,
         title: Center(
           child: Text(
-            "LONG DRINKS",
+            "Gummi Bear's Favorite",
             style: TextStyle(color: Colors.black, fontSize: 30),
           ),
         ),
@@ -33,7 +33,7 @@ class Long_drink extends StatelessWidget {
                   border: Border.all(width: 0.4),
                   color: Colors.black,
                   image: DecorationImage(
-                    image: AssetImage("assets/images/img_3.png"),
+                    image: AssetImage("assets/images/img_2.png"),
                   ),
                 ),
                 height: 200,
@@ -41,42 +41,39 @@ class Long_drink extends StatelessWidget {
                   child: AnimatedTextKit(
                     animatedTexts: [
                       RotateAnimatedText(
-                        "Tall, dark and handsome.",
+                        "Gummiberrey jice is made of\nmagic berries",
                         textStyle: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 30),
-                      ),
-                      RotateAnimatedText(
-                        "Tall, dark and handsome.",
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30),
+                            fontSize: 25),
                       ),
                     ],
+                    totalRepeatCount: 20,
+                    pause: const Duration(milliseconds: 1000),
+                    displayFullTextOnTap: false,
+                    stopPauseOnTap: false,
                   ),
                 ),
               ),
               Home_List_Items(
-                img: "assets/images/img_28.png",
-                text1: "Harvey Weissbanger",
+                img: "assets/images/gummi.jpg",
+                text1: "Blueberry Smoothie",
                 text2: "INGREDIENTS",
                 text3:
-                    "1/2 parts Galliano,3parts Orange juice,9 parts Wheat Beer",
+                    "1/2 parts blueberry,1/2cup pineapple,1cup pineapple juice ,3/4cups yogurt,ice",
                 text4: "HOW TO MIX",
                 text5:
-                    "fill up the beer glass with ice\npour Wheat beer orange juice Galliano into the glass\nStir together\ngarnish with orange peel",
+                    "add ice to the blender\nadd yogurt pineapple juice pineapple blueberry to the blender\nblend together\nstrain into the snifter glass",
               ),
               Home_List_Items(
-                img: "assets/images/img_15.png",
-                text1: "Harvey Weissbanger",
+                img: "assets/images/gummi1.jpg",
+                text1: "Muddy Water",
                 text2: "INGREDIENTS",
                 text3:
-                    "1/2 parts Galliano,3parts Orange juice,9 parts Wheat Beer",
+                    "2 parts white rum,4part cola,2part orange juice.ice cubes",
                 text4: "HOW TO MIX",
                 text5:
-                    "fill up the beer glass with ice\npour Wheat beer orange juice Galliano into the glass\nStir together\ngarnish with orange peel",
+                    "fill up the collins glass with ice cubes\npour white rum orange juice cola\ninto the glass\nstir together\ngarnish with lemon spiral",
               )
             ],
           ),

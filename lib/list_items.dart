@@ -15,6 +15,7 @@ class List_Items extends StatefulWidget {
   final String item1;
   final String item2;
   final String item3;
+  final String name;
 
   const List_Items({
     super.key,
@@ -26,6 +27,7 @@ class List_Items extends StatefulWidget {
     required this.item1,
     required this.item2,
     required this.item3,
+    required this.name,
   });
 
   @override
@@ -44,7 +46,7 @@ class _List_ItemsState extends State<List_Items> {
         child: Column(
           children: [
             Container(
-              height: 200,
+              height: 250,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 border: Border.all(width: 0.4),
@@ -66,13 +68,13 @@ class _List_ItemsState extends State<List_Items> {
                       children: [
                         AnimatedTextKit(
                           animatedTexts: [
-                            FlickerAnimatedText(widget.tittle,
+                            RotateAnimatedText(widget.tittle,
                                 textStyle: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold)),
-                            FlickerAnimatedText(widget.tittle,
+                            WavyAnimatedText(widget.tittle,
                                 textStyle: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold)),
-                            FlickerAnimatedText(widget.tittle,
+                            RotateAnimatedText(widget.tittle,
                                 textStyle: TextStyle(
                                     fontSize: 20, fontWeight: FontWeight.bold)),
                           ],
@@ -80,9 +82,6 @@ class _List_ItemsState extends State<List_Items> {
                           pause: const Duration(milliseconds: 1000),
                           displayFullTextOnTap: true,
                           stopPauseOnTap: true,
-                          onTap: () {
-                            print("Tap Event");
-                          },
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -166,11 +165,11 @@ class _List_ItemsState extends State<List_Items> {
                                 color: Colors.pinkAccent),
                             child: Center(
                               child: Text(
-                                "RECIPIES",
+                                widget.name,
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                ),
                               ),
                             ),
                           ),

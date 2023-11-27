@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'home.dart';
 import 'bottom_bar.dart';
+import 'explore.dart';
+import 'long_drink.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -67,9 +69,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ),
             Padding(

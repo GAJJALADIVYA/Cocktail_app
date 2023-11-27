@@ -2,8 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/list_items.dart';
 
-class ExploreVodka extends StatelessWidget {
-  const ExploreVodka({super.key});
+class Vodka extends StatelessWidget {
+  const Vodka({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,6 @@ class ExploreVodka extends StatelessWidget {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ],
           ),
@@ -62,6 +59,7 @@ class ExploreVodka extends StatelessWidget {
               item1: "1/2 parts\nvodka",
               item2: "1/2 parts\nWhite rum",
               item3: "1/2 parts\ntequila\n ice",
+              name: 'AMF==>RECIPIES',
             ),
             List_Items(
               img: "assets/images/img_29.png",
@@ -72,6 +70,7 @@ class ExploreVodka extends StatelessWidget {
               item1: "2 parts\nVodka",
               item2: "1 parts\nOrange Juice",
               item3: "1 dash\nGrenadine\n ice",
+              name: 'Bloody\nScrewdriver==>RECIPIES',
             ),
           ],
         ),

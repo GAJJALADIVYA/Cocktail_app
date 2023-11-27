@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'list_items.dart';
 import 'explore.dart';
 
-class Explore_Beer extends StatelessWidget {
-  const Explore_Beer({super.key});
+class Beer extends StatelessWidget {
+  const Beer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +63,7 @@ class Explore_Beer extends StatelessWidget {
               item1: "1/2 parts\nElderflower",
               item2: "1/2 parts\nWhiskey",
               item3: "10 parts\nBeer ice",
+              name: 'Steamroller==>RECIPIES',
             ),
             List_Items(
               img: "assets/images/img_28.png",
@@ -73,6 +74,7 @@ class Explore_Beer extends StatelessWidget {
               item1: "1/2 parts\nGalliano",
               item2: "1/2 parts\nOrange juice",
               item3: "9 parts\nWhite beer\n ice cubes",
+              name: 'Harvey\nWeissbanger==>RECIPIES',
             ),
           ],
         ),

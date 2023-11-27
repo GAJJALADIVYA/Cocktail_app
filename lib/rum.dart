@@ -3,9 +3,14 @@ import 'package:mybar/home.dart';
 import 'package:flutter/material.dart';
 import 'list_items.dart';
 
-class Explore_Rum extends StatelessWidget {
-  const Explore_Rum({super.key});
+class Rum extends StatefulWidget {
+  const Rum({super.key});
 
+  @override
+  State<Rum> createState() => _RumState();
+}
+
+class _RumState extends State<Rum> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,9 +46,6 @@ class Explore_Rum extends StatelessWidget {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ],
           ),
@@ -62,6 +64,7 @@ class Explore_Rum extends StatelessWidget {
               item1: "2 parts\nWhite rum",
               item2: "3/4 parts\nSugar syrup",
               item3: "4 lime wedges\nClub soda\n ice",
+              name: 'Caipirissima==>RECIPIES',
             ),
             List_Items(
               img: "assets/images/img_26.png",
@@ -72,6 +75,7 @@ class Explore_Rum extends StatelessWidget {
               item1: "1 part\nWhite rum",
               item2: "1/2 parts\nCocunut liqueur",
               item3: "4 Hot chocolate\n ice",
+              name: 'Ski Lift==>RECIPIES',
             ),
           ],
         ),

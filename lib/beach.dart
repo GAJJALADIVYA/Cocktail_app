@@ -6,8 +6,8 @@ import 'list_items.dart';
 import 'splashscreen.dart';
 import 'home_list_items.dart';
 
-class Long_drink extends StatelessWidget {
-  const Long_drink({super.key});
+class Beach extends StatelessWidget {
+  const Beach({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class Long_drink extends StatelessWidget {
         backgroundColor: Colors.teal,
         title: Center(
           child: Text(
-            "LONG DRINKS",
+            "BEACH",
             style: TextStyle(color: Colors.black, fontSize: 30),
           ),
         ),
@@ -33,7 +33,7 @@ class Long_drink extends StatelessWidget {
                   border: Border.all(width: 0.4),
                   color: Colors.black,
                   image: DecorationImage(
-                    image: AssetImage("assets/images/img_3.png"),
+                    image: AssetImage("assets/images/img_4.png"),
                   ),
                 ),
                 height: 200,
@@ -41,14 +41,14 @@ class Long_drink extends StatelessWidget {
                   child: AnimatedTextKit(
                     animatedTexts: [
                       RotateAnimatedText(
-                        "Tall, dark and handsome.",
+                        "Babes,Beef,Bonfires",
                         textStyle: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 30),
                       ),
                       RotateAnimatedText(
-                        "Tall, dark and handsome.",
+                        "Babes,Beef,Bonfires",
                         textStyle: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -59,24 +59,24 @@ class Long_drink extends StatelessWidget {
                 ),
               ),
               Home_List_Items(
-                img: "assets/images/img_28.png",
-                text1: "Harvey Weissbanger",
+                img: "assets/images/beach1.jpg",
+                text1: "Caipirissima",
                 text2: "INGREDIENTS",
                 text3:
-                    "1/2 parts Galliano,3parts Orange juice,9 parts Wheat Beer",
+                    "2 parts white rum,3/4 sugar syrup,4 lime wedges\ncrushed ice",
                 text4: "HOW TO MIX",
                 text5:
-                    "fill up the beer glass with ice\npour Wheat beer orange juice Galliano into the glass\nStir together\ngarnish with orange peel",
+                    "fill up the shaker with ice cubes\nfill up the old fashioned glass with crushed ice\ncrush sugar syruplime wedge with muddler",
               ),
               Home_List_Items(
-                img: "assets/images/img_15.png",
-                text1: "Harvey Weissbanger",
+                img: "assets/images/beach2.jpg",
+                text1: "Sea Breeze",
                 text2: "INGREDIENTS",
                 text3:
-                    "1/2 parts Galliano,3parts Orange juice,9 parts Wheat Beer",
+                    "2 parts Vodka,1/2 parts grapefruit juice,6parts cranberry juice\nice cubes",
                 text4: "HOW TO MIX",
                 text5:
-                    "fill up the beer glass with ice\npour Wheat beer orange juice Galliano into the glass\nStir together\ngarnish with orange peel",
+                    "fill up the collins glass with ice\npour cranberry juicegrapefruit juicevodka into the glass\ngarnish with lime wedge",
               )
             ],
           ),

@@ -2,8 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/list_items.dart';
 
-class Explore_wsiskey extends StatelessWidget {
-  const Explore_wsiskey({super.key});
+class Whiskey extends StatelessWidget {
+  const Whiskey({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,6 @@ class Explore_wsiskey extends StatelessWidget {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ],
           ),
@@ -62,6 +59,7 @@ class Explore_wsiskey extends StatelessWidget {
               item1: "1/2 parts\nirish Whiskey",
               item2: "1/2 parts\nSloe gin",
               item3: "1 tsp\ndark rum ice",
+              name: 'Irish Shillelagh==>RECIPIES',
             ),
             List_Items(
               img: "assets/images/img_30.png",
@@ -72,6 +70,7 @@ class Explore_wsiskey extends StatelessWidget {
               item1: "3 parts\nBourbon",
               item2: "1 tsp\nSugar water",
               item3: "4\nMint leaves\n ice ",
+              name: 'Mint Julep==>RECIPIES',
             ),
           ],
         ),

@@ -2,16 +2,13 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:mybar/beer.dart';
 import 'package:mybar/gin.dart';
-import 'package:mybar/rum.dart';
-import 'package:mybar/vodka.dart';
 import 'package:mybar/home_list.dart';
+import 'package:mybar/rum.dart';
 import 'package:mybar/whiskey.dart';
 import 'package:mybar/wine.dart';
-import 'beer.dart';
-import 'rum.dart';
-import 'wine.dart';
 import 'bottom_bar.dart';
 import 'list_items.dart';
+import 'vodka.dart';
 
 class Explore extends StatelessWidget {
   const Explore({
@@ -39,9 +36,6 @@ class Explore extends StatelessWidget {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ),
           ],
@@ -58,7 +52,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ExploreWine(),
+                      builder: (context) => const Wine(),
                     ),
                   );
                 },
@@ -75,7 +69,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Explore_Rum(),
+                      builder: (context) => const Rum(),
                     ),
                   );
                 },
@@ -92,7 +86,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Explore_Gin(),
+                      builder: (context) => const Gin(),
                     ),
                   );
                 },
@@ -109,7 +103,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ExploreVodka(),
+                      builder: (context) => const Vodka(),
                     ),
                   );
                 },
@@ -127,7 +121,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Explore_Beer(),
+                      builder: (context) => const Beer(),
                     ),
                   );
                 },
@@ -145,7 +139,7 @@ class Explore extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Explore_wsiskey(),
+                      builder: (context) => const Whiskey(),
                     ),
                   );
                 },

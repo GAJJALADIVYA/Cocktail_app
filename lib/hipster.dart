@@ -5,9 +5,10 @@ import 'bottom_bar.dart';
 import 'list_items.dart';
 import 'splashscreen.dart';
 import 'home_list_items.dart';
+import 'home_list_items.dart';
 
-class Long_drink extends StatelessWidget {
-  const Long_drink({super.key});
+class Hipster extends StatelessWidget {
+  const Hipster({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class Long_drink extends StatelessWidget {
         backgroundColor: Colors.teal,
         title: Center(
           child: Text(
-            "LONG DRINKS",
+            "HIPSTER",
             style: TextStyle(color: Colors.black, fontSize: 30),
           ),
         ),
@@ -33,7 +34,7 @@ class Long_drink extends StatelessWidget {
                   border: Border.all(width: 0.4),
                   color: Colors.black,
                   image: DecorationImage(
-                    image: AssetImage("assets/images/img_3.png"),
+                    image: AssetImage("assets/images/img_7.png"),
                   ),
                 ),
                 height: 200,
@@ -41,14 +42,14 @@ class Long_drink extends StatelessWidget {
                   child: AnimatedTextKit(
                     animatedTexts: [
                       RotateAnimatedText(
-                        "Tall, dark and handsome.",
+                        "I liked it before it was cool",
                         textStyle: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 30),
                       ),
                       RotateAnimatedText(
-                        "Tall, dark and handsome.",
+                        "I liked it before it was cool",
                         textStyle: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -59,24 +60,24 @@ class Long_drink extends StatelessWidget {
                 ),
               ),
               Home_List_Items(
-                img: "assets/images/img_28.png",
-                text1: "Harvey Weissbanger",
+                img: "assets/images/hiper.jpg",
+                text1: "Sea Bottom",
                 text2: "INGREDIENTS",
                 text3:
-                    "1/2 parts Galliano,3parts Orange juice,9 parts Wheat Beer",
+                    "2 parts vodka,2parts irish cream ,2parts blue curacao,3 parts cola ice",
                 text4: "HOW TO MIX",
                 text5:
-                    "fill up the beer glass with ice\npour Wheat beer orange juice Galliano into the glass\nStir together\ngarnish with orange peel",
+                    "add ice to the collins glass\npour vodkairish cream into the glass\nfill up the glass with cola\nadd Blue Curacao to the glass\ngarnish with",
               ),
               Home_List_Items(
-                img: "assets/images/img_15.png",
-                text1: "Harvey Weissbanger",
+                img: "assets/images/hiper1.jpg",
+                text1: "Sweet Veggie Smoothie",
                 text2: "INGREDIENTS",
                 text3:
-                    "1/2 parts Galliano,3parts Orange juice,9 parts Wheat Beer",
+                    "1 cup apple juice,1cup apple,1/2cups carrot,1/2cups cucumber,1 dash cinnamon ice",
                 text4: "HOW TO MIX",
                 text5:
-                    "fill up the beer glass with ice\npour Wheat beer orange juice Galliano into the glass\nStir together\ngarnish with orange peel",
+                    "add ice to the blender\nadd cucumber carrot apple juiceapple to the blender\nadd cinnamon to the glass",
               )
             ],
           ),

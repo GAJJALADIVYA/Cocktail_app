@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mybar/explore.dart';
 import 'package:mybar/home.dart';
-import 'package:mybar/whiskey.dart';
-import 'package:mybar/wish_list.dart';
 import 'package:mybar/wine.dart';
-import 'package:mybar/vodka.dart';
+import 'package:mybar/wish_list.dart';
+import 'list_items.dart';
+import 'long_drink.dart';
+import 'gummiberrey.dart';
+import 'beach.dart';
+import 'green_vitamin.dart';
+import 'spring.dart';
+import 'hipster.dart';
+import 'whiskey.dart';
 import 'rum.dart';
 import 'gin.dart';
 import 'beer.dart';
-import 'list_items.dart';
 
 class Bottom_Bar extends StatefulWidget {
   const Bottom_Bar({super.key});
@@ -23,12 +28,18 @@ class _Bottom_BarState extends State<Bottom_Bar> {
     const MyHomePage(),
     const Explore(),
     const Wish_List(),
-    const ExploreWine(),
-    const Explore_Rum(),
-    const Explore_Gin(),
-    const ExploreVodka(),
-    const Explore_Beer(),
-    const Explore_wsiskey(),
+    const Wine(),
+    const Long_drink(),
+    const Green_Vitamin(),
+    const Gummiberrey(),
+    const Spring(),
+    const Hipster(),
+    const Beach(),
+    const Rum(),
+    const Gin(),
+    const Beach(),
+    const Beer(),
+    const Whiskey(),
   ];
   @override
   Widget build(BuildContext context) {

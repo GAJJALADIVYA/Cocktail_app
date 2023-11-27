@@ -12,6 +12,11 @@ import 'package:mybar/search_model.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 import 'splashscreen.dart';
+import 'gummiberrey.dart';
+import 'beach.dart';
+import 'hipster.dart';
+import 'spring.dart';
+import 'green_vitamin.dart';
 
 void main() {
   runApp(MyApp());
@@ -66,18 +71,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     RotateAnimatedText(
                       'The Definitive Cocktail Encyclopaedia.',
                       textStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
                   ],
-                  totalRepeatCount: 4,
+                  totalRepeatCount: 20,
                   pause: const Duration(milliseconds: 1000),
                   displayFullTextOnTap: true,
                   stopPauseOnTap: true,
-                  onTap: () {
-                    print("Tap Event");
-                  },
                 ),
               ],
             ),
@@ -135,38 +137,89 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           height: 15,
                         ),
-                        Home_List(
-                            image: "assets/images/img_2.png",
-                            name: "Gummi Bear's Favorite",
-                            text: "Gummiberrey jice is made of\nmagic berries"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Gummiberrey(),
+                              ),
+                            );
+                          },
+                          child: Home_List(
+                              image: "assets/images/img_2.png",
+                              name: "Gummi Bear's Favorite",
+                              text:
+                                  "Gummiberrey jice is made of\nmagic berries"),
+                        ),
                         SizedBox(
                           height: 15,
                         ),
-                        Home_List(
-                            image: "assets/images/img_4.png",
-                            name: "Beach",
-                            text: "Babes,Beef,Bonfires"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Beach(),
+                              ),
+                            );
+                          },
+                          child: Home_List(
+                              image: "assets/images/img_4.png",
+                              name: "Beach",
+                              text: "Babes,Beef,Bonfires"),
+                        ),
                         SizedBox(
                           height: 15,
                         ),
-                        Home_List(
-                            image: "assets/images/img_5.png",
-                            name: "Green Vitamin Bombs",
-                            text: "If you can't eat 'em,drink 'em"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Green_Vitamin(),
+                              ),
+                            );
+                          },
+                          child: Home_List(
+                              image: "assets/images/img_5.png",
+                              name: "Green Vitamin Bombs",
+                              text: "If you can't eat 'em,drink 'em"),
+                        ),
                         SizedBox(
                           height: 15,
                         ),
-                        Home_List(
-                            image: "assets/images/img_6.png",
-                            name: "Spring",
-                            text: "Oh,that spring in your step"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Spring(),
+                              ),
+                            );
+                          },
+                          child: Home_List(
+                              image: "assets/images/img_6.png",
+                              name: "Spring",
+                              text: "Oh,that spring in your step"),
+                        ),
                         SizedBox(
                           height: 15,
                         ),
-                        Home_List(
-                            image: "assets/images/img_7.png",
-                            name: "Hipster",
-                            text: "I liked it before it was cool"),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Hipster(),
+                              ),
+                            );
+                          },
+                          child: Home_List(
+                              image: "assets/images/img_7.png",
+                              name: "Hipster",
+                              text: "I liked it before it was cool"),
+                        ),
                       ],
                     ),
                   ),

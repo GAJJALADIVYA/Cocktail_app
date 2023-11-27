@@ -35,38 +35,26 @@ class Home_List extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text(
+                  name,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
                 AnimatedTextKit(
                   animatedTexts: [
-                    RotateAnimatedText(name,
-                        textStyle: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                    RotateAnimatedText(name,
-                        textStyle: TextStyle(
-                            color: Colors.deepPurple,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
-                    RotateAnimatedText(name,
-                        textStyle: TextStyle(
-                            color: Colors.blueAccent,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold)),
+                    RotateAnimatedText(
+                      text,
+                      textStyle: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
                   ],
-                  totalRepeatCount: 4,
+                  totalRepeatCount: 20,
                   pause: const Duration(milliseconds: 1000),
                   displayFullTextOnTap: true,
                   stopPauseOnTap: true,
-                  onTap: () {
-                    print("Tap Event");
-                  },
-                ),
-                Text(
-                  text,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
                 ),
               ],
             ),

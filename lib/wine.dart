@@ -4,18 +4,18 @@ import 'package:mybar/home.dart';
 import 'package:mybar/list_items.dart';
 import 'package:mybar/bottom_bar.dart';
 import 'package:mybar/home_list.dart';
-import 'home.dart';
 import 'explore.dart';
 
-class ExploreWine extends StatefulWidget {
-  const ExploreWine({super.key});
+class Wine extends StatefulWidget {
+  const Wine({super.key});
 
   @override
-  State<ExploreWine> createState() => _ExploreWineState();
+  State<Wine> createState() => WineState();
 }
 
-class _ExploreWineState extends State<ExploreWine> {
+class WineState extends State<Wine> {
   int add = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +51,6 @@ class _ExploreWineState extends State<ExploreWine> {
                 pause: const Duration(milliseconds: 1000),
                 displayFullTextOnTap: true,
                 stopPauseOnTap: true,
-                onTap: () {
-                  print("Tap Event");
-                },
               ),
             ],
           ),
@@ -72,6 +69,7 @@ class _ExploreWineState extends State<ExploreWine> {
               item1: "3 parts\nPROSECCO",
               item2: "2 parts\nAPEROL",
               item3: "1 Splash\nClub soda\n ice",
+              name: "Spritz Veneziano==>RECIPIES",
             ),
             List_Items(
               img: "assets/images/img_25.png",
@@ -82,6 +80,7 @@ class _ExploreWineState extends State<ExploreWine> {
               item1: "5 parts\nPROSECCO",
               item2: "2.5 parts\nPeach Juice",
               item3: "1 Splash\n ice",
+              name: 'Bellini==>RECIPIES',
             ),
           ],
         ),
